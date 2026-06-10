@@ -38,7 +38,7 @@ function App() {
       <Navigation isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
       {/* Main Content Canvas */}
-      <main className="flex-1 md:ml-12 pt-24 md:pt-32 pb-24 px-6 md:px-16 xl:px-32 flex flex-col gap-32 md:gap-48 relative">
+      <main className="flex-1 md:ml-12 pt-24 md:pt-32 pb-24 px-6 md:px-16 xl:px-32 flex flex-col gap-16 md:gap-24 relative">
         <Hero data={resumeData.personal} />
         
         <div className="w-full border-t structural-border"></div>
