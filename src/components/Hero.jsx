@@ -42,34 +42,32 @@ const Hero = ({ data }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-          <div className="flex flex-col gap-2 p-4 rounded-xl bg-foreground/5 border border-borderLine hover:bg-foreground/10 transition-colors">
-            <span className="text-sm uppercase tracking-widest text-indigo-500 font-mono font-semibold">Location</span>
-            <span className="text-base font-medium">{data.location}</span>
+        <div className="flex flex-col md:flex-row gap-6 md:gap-0 mt-8 md:mt-12 p-6 md:p-8 rounded-2xl bg-foreground/[0.02] border border-borderLine backdrop-blur-md shadow-2xl relative overflow-hidden group">
+          {/* Subtle gradient sheen inside the dock */}
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+          
+          {/* Location */}
+          <div className="flex-1 md:pr-8 flex flex-col justify-start relative z-10">
+             <span className="text-[11px] uppercase tracking-[0.2em] font-mono font-bold text-foreground/70 dark:text-foreground/60 mb-2">Location</span>
+             <span className="text-lg font-medium text-foreground/90">{data.location}</span>
           </div>
           
-          <div className="flex flex-col gap-2 p-4 rounded-xl bg-foreground/5 border border-borderLine hover:bg-foreground/10 transition-colors">
-            <span className="text-sm uppercase tracking-widest text-purple-500 font-mono font-semibold">Contact</span>
-            <a href={`mailto:${data.email}`} className="text-base hover:text-purple-500 transition-colors">{data.email}</a>
-            <span className="text-base text-foreground/70">{data.phone}</span>
+          {/* Contact */}
+          <div className="flex-1 md:px-8 flex flex-col justify-start border-t md:border-t-0 md:border-l border-borderLine relative z-10 py-6 md:py-0">
+             <span className="text-[11px] uppercase tracking-[0.2em] font-mono font-bold text-foreground/70 dark:text-foreground/60 mb-2">Contact</span>
+             <a href={`mailto:${data.email}`} className="text-base hover:text-indigo-500 transition-colors truncate mb-1">{data.email}</a>
+             <span className="text-sm text-foreground/60">{data.phone}</span>
           </div>
 
-          <div className="flex flex-col gap-2 p-4 rounded-xl bg-foreground/5 border border-borderLine hover:bg-foreground/10 transition-colors">
-            <span className="text-sm uppercase tracking-widest text-emerald-600 font-mono font-semibold">Profiles</span>
-            <div className="flex flex-col gap-1">
-              <a href={`https://linkedin.com/in/${data.links.linkedin}`} target="_blank" rel="noreferrer" className="text-base hover:text-emerald-600 transition-colors flex justify-between items-center group">
-                LinkedIn 
-                <span className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">↗</span>
-              </a>
-              <a href={`https://github.com/${data.links.github}`} target="_blank" rel="noreferrer" className="text-base hover:text-emerald-600 transition-colors flex justify-between items-center group">
-                GitHub
-                <span className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">↗</span>
-              </a>
-              <a href={`https://leetcode.com/u/${data.links.leetcode}`} target="_blank" rel="noreferrer" className="text-base hover:text-emerald-600 transition-colors flex justify-between items-center group">
-                LeetCode
-                <span className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">↗</span>
-              </a>
-            </div>
+          {/* Profiles */}
+          <div className="flex-1 md:pl-8 flex flex-col justify-start border-t md:border-t-0 md:border-l border-borderLine relative z-10 pt-6 md:pt-0">
+             <span className="text-[11px] uppercase tracking-[0.2em] font-mono font-bold text-foreground/70 dark:text-foreground/60 mb-3">Profiles</span>
+             <div className="flex flex-wrap gap-4 md:gap-6">
+                <a href={`https://linkedin.com/in/${data.links.linkedin}`} target="_blank" rel="noreferrer" className="text-sm md:text-base font-medium text-foreground/70 hover:text-indigo-500 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-indigo-500 hover:after:w-full after:transition-all">LinkedIn</a>
+                <a href={`https://github.com/${data.links.github}`} target="_blank" rel="noreferrer" className="text-sm md:text-base font-medium text-foreground/70 hover:text-indigo-500 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-indigo-500 hover:after:w-full after:transition-all">GitHub</a>
+                <a href={`https://leetcode.com/u/${data.links.leetcode}`} target="_blank" rel="noreferrer" className="text-sm md:text-base font-medium text-foreground/70 hover:text-indigo-500 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-indigo-500 hover:after:w-full after:transition-all">LeetCode</a>
+                <a href={`https://codeforces.com/profile/${data.links.codeforces}`} target="_blank" rel="noreferrer" className="text-sm md:text-base font-medium text-foreground/70 hover:text-indigo-500 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-indigo-500 hover:after:w-full after:transition-all">Codeforces</a>
+             </div>
           </div>
         </div>
       </div>
