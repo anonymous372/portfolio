@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - Neutral bright */
+    --background: #fafafa;
+    --foreground: #0f172a;
+    --border-line: rgba(15, 23, 42, 0.1);
+    --accent: #6366f1; /* Indigo */
+  }
+
+  .dark {
+    /* Dark Mode - Deep Slate */
+    --background: #020617;
+    --foreground: #f8fafc;
+    --border-line: rgba(248, 250, 252, 0.1);
+    --accent: #818cf8; /* Indigo light */
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-500 ease-in-out;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  section {
+    scroll-margin-top: 8rem;
+  }
+
+  /* Thin structural line class */
+  .structural-border {
+    @apply border-borderLine transition-colors duration-500;
+  }
+
+  .role-text {
+    color: #1e293b; /* slate-800 for dark visibility in light mode */
+  }
+  
+  .dark .role-text {
+    color: #f0f9ff; /* sky-50 for icy blue in dark mode */
+    filter: drop-shadow(0 0 8px rgba(186, 230, 253, 0.4));
+  }
+}
+
+@layer utilities {
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .text-fluid-body {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+  }
+
+  /* Clip path transitions */
+  .reveal-wrap {
+    overflow: hidden;
+  }
+  
+  .reveal-inner {
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .reveal-inner.revealed {
+    transform: translateY(0);
+  }
+
+  /* Interactive typography hover */
+  .hover-shift {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1), letter-spacing 0.3s ease;
+  }
+  
+  .hover-shift:hover {
+    transform: translateX(4px);
+    letter-spacing: 0.05em;
+  }
+  
+  /* Blob animation for backgrounds */
+  @keyframes blob {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    33% {
+      transform: translate(-50%, -50%) scale(1.1) translate(30px, -50px);
+    }
+    66% {
+      transform: translate(-50%, -50%) scale(0.9) translate(-20px, 20px);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 25s infinite alternate ease-in-out;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Dust Mote Floating */
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(50px, -150px) rotate(45deg); opacity: 0; }
+  }
+  
+  .animate-float {
+    animation: float linear infinite forwards;
+  }
+
+  /* Space Background Animations */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  .animate-twinkle {
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  /* Dynamic Comets base styles */
+  .comet-dynamic {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .comet-dynamic::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .comet-dynamic::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  @keyframes shootingStarDynamic {
+    0% {
+      transform: translate(0, 0) rotate(-45deg);
+      opacity: 0;
+    }
+    2% {
+      opacity: 1;
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-3000px, 3000px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .comet-sm {
+    width: 6px; height: 6px;
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8),
+                0 0 15px 5px rgba(186, 230, 253, 0.9),
+                0 0 30px 10px rgba(56, 189, 248, 0.5);
+  }
+
+  .comet-md {
+    width: 10px; height: 10px;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
+                0 0 25px 8px rgba(186, 230, 253, 0.9),
+                0 0 50px 15px rgba(56, 189, 248, 0.5);
+  }
+
+  .comet-lg {
+    width: 15px; height: 15px;
+    box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.8),
+                0 0 35px 10px rgba(186, 230, 253, 0.9),
+                0 0 60px 20px rgba(56, 189, 248, 0.5);
+  }
+
+  /* Stacked Carousel */
+  @keyframes slideDownIn {
+    0% { transform: translateY(-40px) scale(1.02); opacity: 0; z-index: 30; }
+    100% { transform: translateY(0px) scale(1); opacity: 1; z-index: 30; }
+  }
+
+  .slot-top {
+    z-index: 30;
+    animation: slideDownIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.15) !important;
+  }
+  
+  .dark .slot-top {
+    box-shadow: 0 0 25px -5px rgba(129, 140, 248, 0.25) !important;
+  }
+  
+  .slot-middle {
+    z-index: 20;
+    transform: translateY(25px) scale(0.95);
+    opacity: 0.8;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .slot-bottom {
+    z-index: 10;
+    transform: translateY(50px) scale(0.90);
+    opacity: 0.5;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .slot-hidden {
+    z-index: 0;
+    transform: translateY(75px) scale(0.85);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}

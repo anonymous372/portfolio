@@ -1,0 +1,108 @@
+{
+  "personal": {
+    "name": "Sourabh Shukla",
+    "phone": "+91 9717499758",
+    "email": "sourabhshukla3.14@gmail.com",
+    "location": "Delhi, India",
+    "summary": "Hey there! its **Sourabh Shukla** here. I'm a software engineer with a passion for turning ideas into reality Currently pursuing my **MCA** at **NIT Karnataka**. With solid work experience and knack for different technologies. My favorite sport these days is DSA 😉.",
+    "links": {
+      "linkedin": "sourabhshukladev",
+      "github": "anonymous372",
+      "leetcode": "anonymous372"
+    }
+  },
+  "education": [
+    {
+      "institution": "National Institute of Technology Karnataka",
+      "degree": "Master of Computer Applications",
+      "duration": "Jul 2024 - May 2027",
+      "score": "CGPA: 8.86"
+    },
+    {
+      "institution": "Bhaskaracharya College of Applied Sciences",
+      "degree": "B.Sc(H) Computer Science",
+      "duration": "Jul 2020 - May 2023",
+      "score": "CGPA: 8.5"
+    },
+    {
+      "institution": "Vishwa Bharati Public School",
+      "degree": "Senior Secondary",
+      "duration": "Apr 2019 - Mar 2020",
+      "score": "XII: 93.4%"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Velotio Technologies",
+      "duration": "Jul 2023 - Jan 2024",
+      "techStack": "Django REST Framework, Python, POSTGRESQL",
+      "highlights": [
+        "Architected an **automated business onboarding pipeline** using **Django REST Framework** and **AWS S3** to process and store uploaded sheets",
+        "Wrote **data validation logic** to parse sheets and **automatically email detailed error report**, enabling QA to handle onboarding independently (**reduced developer involvement by ~80%**)",
+        "**Offloaded database writes and file processing** to asynchronous **Celery workers**, preventing API timeouts and main-thread blocking"
+      ]
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "Arachnomesh Technologies",
+      "duration": "Dec 2022 - Mar 2023",
+      "techStack": "REACT.JS, NODE, EXPRESS, MYSQL, REDUX",
+      "highlights": [
+        "**Built full-stack notification functionality**, building **RESTful APIs** for 5+ notification types and integrated",
+        "**Designed a bulk task creation feature** with an excel-like interface, **reducing manual effort by ~70%**",
+        "**Integrated a pivot table reporting tool** that enabled administrators to instantly **generate custom data views** on user activity and task execution metrics",
+        "**Implemented search, pagination, and sorting** across multiple modules, **improving application performance**"
+      ]
+    },
+    {
+      "role": "Software Development Intern",
+      "company": "Skynox Tech",
+      "duration": "Aug 2022 - Oct 2022",
+      "techStack": "NEXT.JS, TAILWIND CSS, STRAPI",
+      "highlights": [
+        "**Translated Figma mockups** into fully responsive interfaces for 5+ core screens using **Next.js** and **Tailwind CSS**",
+        "**Implemented a passwordless authentication flow** via **email magic links**, managing secure token generation, email dispatch, and server-side session validation"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Migozz: Real-Time Multimedia Communication Platform",
+      "techStack": "MERN | Socket.io | Peer.js",
+      "images": ["/project1a.png", "/project1b.png", "/project1c.png"],
+      "github": "https://github.com/anonymous372/migozz",
+      "live": "https://migozz.netlify.app/",
+      "highlights": [
+        "**Engineered a real-time messaging application** using **MERN** stack and **WebSockets** for text chat, voice notes, and media/file transfers",
+        "**Configured PeerJS** and **WebRTC** to enable **1-on-1 and group audio/video calls** via peer-to-peer networking",
+        "**Developed multiplayer games** using custom socket events to **sync live game states** across clients",
+        "**Managed concurrent socket connections** and media streams to **support group chats and file sharing**"
+      ]
+    },
+    {
+      "name": "StalkEm: Coding Profile Dashboard",
+      "techStack": "React | Express | Node | Redis",
+      "images": ["/project2a.png", "/project2b.png"],
+      "github": "https://github.com/anonymous372/StalkIt",
+      "live": "https://stalk-em.netlify.app/",
+      "highlights": [
+        "**Designed a full-stack leaderboard** to aggregate and visualize **LeetCode** and **Codeforces metrics** for **30+ peers**",
+        "**Developed interactive React UI components** supporting custom sorting and **data visualization** for recent contest performance using **react-chart-js**",
+        "**Architected a Redis-backed data refresh pipeline** to minimize external API calls and maintaining **>99% uptime** serving **1000+ monthly visits** for over **2 years**"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": "C++, JavaScript, Python",
+    "backendAndDatabases": "Django, Django REST Framework, Node.js, Express, MySQL, PostgreSQL, MongoDB, Redis",
+    "frontend": "React.js, Next.js, Redux, HTML/CSS, Tailwind CSS",
+    "toolsAndDevOps": "Docker, Git, GitHub, Postman, VS Code"
+  },
+  "achievements": [
+    "Achieved **All India Rank 30** out of 20,000+ candidates in **NIMCET 2024** a national-level MCA entrance exam",
+    "**Guardian** on LeetCode (rating: **2135**, top 1.2%) and **Expert** on Codeforces (rating: **1604**)",
+    "Secured **Valedictorian** title (**#1 individual performer**) and Overall Team Trophy at Version '26, NIT Trichy among 120+ participants",
+    "Ranked **top-3** in 5+ coding contests (up to 120 participants) by designing optimized algorithmic solutions"
+  ]
+}
