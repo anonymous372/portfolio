@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Helper component to parse and render "**bold**" text
 const HighlightedText = ({ text }) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  const parts = text.split(/(\*\*.*?\*\*|__.*?__)/g);
   return (
     <>
       {parts.map((part, i) => {
@@ -11,6 +11,13 @@ const HighlightedText = ({ text }) => {
             <strong key={i} className="font-semibold text-foreground">
               {part.slice(2, -2)}
             </strong>
+          );
+        }
+        if (part.startsWith('__') && part.endsWith('__')) {
+          return (
+            <span key={i} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 drop-shadow-sm">
+              {part.slice(2, -2)}
+            </span>
           );
         }
         return <span key={i}>{part}</span>;
@@ -32,40 +39,47 @@ const StackedCarousel = ({ images }) => {
     if (!images || images.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 40000);
     return () => clearInterval(interval);
   }, [images, currentIndex]);
 
   if (!images || images.length === 0) return null;
 
   return (
-    <div 
-      className="relative w-full aspect-video mb-12 cursor-pointer group"
-      onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
-    >
-      {images.map((img, index) => {
-        const offset = (currentIndex - index + images.length) % images.length;
-        
-        let slotClass = "slot-hidden";
-        if (offset === 0) slotClass = "slot-top";
-        else if (offset === 1) slotClass = "slot-middle";
-        else if (offset === 2) slotClass = "slot-bottom";
+    <div className="w-full mb-8 flex flex-col items-center">
+      <div
+        className="relative w-full aspect-video cursor-pointer group mb-8"
+        onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+      >
+        {images.map((img, index) => {
+          const offset = (currentIndex - index + images.length) % images.length;
 
-        return (
-          <div
-            key={img}
-            className={`absolute top-0 left-0 w-full h-full rounded-xl overflow-hidden shadow-2xl border border-borderLine ring-1 ring-foreground/5 origin-top ${slotClass}`}
-          >
-            <img 
-              src={img} 
-              alt={`Slide ${index}`}
-              className="w-full h-full object-cover object-top"
-            />
-            {/* Depth overlay for images further back */}
-            {offset > 0 && <div className="absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500"></div>}
-          </div>
-        );
-      })}
+          let slotClass = "slot-hidden";
+          if (offset === 0) slotClass = "slot-top";
+          else if (offset === 1) slotClass = "slot-middle";
+          else if (offset === 2) slotClass = "slot-bottom";
+
+          return (
+            <div
+              key={img}
+              className={`absolute top-0 left-0 w-full h-full rounded-xl overflow-hidden shadow-2xl border border-borderLine ring-1 ring-foreground/5 origin-top ${slotClass}`}
+            >
+              <img
+                src={img}
+                alt={`Slide ${index}`}
+                className="w-full h-full object-cover object-top"
+              />
+              {/* Depth overlay for images further back */}
+              {offset > 0 && <div className="absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500"></div>}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Global Numbering Indicator placed under the stack in normal flow */}
+      <div className="px-4 py-1.5 rounded-full bg-foreground/5 border border-borderLine text-[10px] md:text-xs font-mono font-medium tracking-widest text-foreground/70 shadow-sm transition-all duration-300">
+        {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+      </div>
     </div>
   );
 };
@@ -87,9 +101,8 @@ const Projects = ({ data }) => {
               key={index}
               onMouseEnter={() => setActiveIndex(index)}
               onClick={() => setActiveIndex(index)}
-              className={`text-left p-6 md:p-8 border-b structural-border last:border-b-0 transition-colors duration-300 ${
-                activeIndex === index ? 'bg-foreground text-background' : 'hover:bg-foreground/[0.03]'
-              }`}
+              className={`text-left p-6 md:p-8 border-b structural-border last:border-b-0 transition-colors duration-300 ${activeIndex === index ? 'bg-foreground text-background' : 'hover:bg-foreground/[0.03]'
+                }`}
             >
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-mono opacity-50">0{index + 1}</span>
@@ -124,7 +137,7 @@ const Projects = ({ data }) => {
               <div className="flex gap-6 shrink-0 mt-2 xl:mt-0">
                 {data[activeIndex].github && (
                   <a href={data[activeIndex].github} target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-foreground/70 hover:text-emerald-500 transition-colors">
-                    GitHub 
+                    GitHub
                     <span className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">↗</span>
                   </a>
                 )}

@@ -136,12 +136,12 @@
     "languages": "C++, JavaScript, Python",
     "backendAndDatabases": "Django, Django REST Framework, Node.js, Express, MySQL, PostgreSQL, MongoDB, Redis",
     "frontend": "React.js, Next.js, Redux, HTML/CSS, Tailwind CSS",
-    "toolsAndDevOps": "Docker, Git, GitHub, Postman, VS Code"
+    "toolsAndDevOps": "Docker, Git, Render, Postman"
   },
   "achievements": [
-    "Achieved **All India Rank 30** out of 20,000+ candidates in **NIMCET 2024** a national-level MCA entrance exam",
-    "**Guardian** on LeetCode (rating: **2135**, top 1.2%) and **Expert** on Codeforces (rating: **1604**)",
-    "Secured **Valedictorian** title (**#1 individual performer**) and Overall Team Trophy at Version '26, NIT Trichy among 120+ participants",
-    "Ranked **top-3** in 5+ coding contests (up to 120 participants) by designing optimized algorithmic solutions"
+    "Achieved __All India Rank 30__ out of 20,000+ candidates in **NIMCET 2024** a national-level MCA entrance exam",
+    "__Guardian__ on LeetCode (rating: **2135**, top 1.2%) and __Expert__ on Codeforces (rating: **1604**)",
+    "Secured **Valedictorian** title (__#1 individual performer__) and Overall Team Trophy at Version '26, NIT Trichy among 120+ participants",
+    "Ranked __top-3__ in 5+ coding contests (up to 120 participants) by designing optimized algorithmic solutions"
   ]
 }

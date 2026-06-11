@@ -2,7 +2,7 @@ import React from 'react';
 
 // Helper component to parse and render "**bold**" text
 const HighlightedText = ({ text }) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  const parts = text.split(/(\*\*.*?\*\*|__.*?__)/g);
   return (
     <>
       {parts.map((part, i) => {
@@ -11,6 +11,13 @@ const HighlightedText = ({ text }) => {
             <strong key={i} className="font-semibold text-foreground">
               {part.slice(2, -2)}
             </strong>
+          );
+        }
+        if (part.startsWith('__') && part.endsWith('__')) {
+          return (
+            <span key={i} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 drop-shadow-sm">
+              {part.slice(2, -2)}
+            </span>
           );
         }
         return <span key={i}>{part}</span>;
