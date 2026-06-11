@@ -71,7 +71,11 @@
     {
       "name": "Migozz: Real-Time Multimedia Communication Platform",
       "techStack": "MERN | Socket.io | Peer.js",
-      "images": ["/project1a.png", "/project1b.png", "/project1c.png"],
+      "images": [
+        "/project1a.png",
+        "/project1b.png",
+        "/project1c.png"
+      ],
       "github": "https://github.com/anonymous372/migozz",
       "live": "https://migozz.netlify.app/",
       "highlights": [
@@ -84,13 +88,47 @@
     {
       "name": "StalkEm: Coding Profile Dashboard",
       "techStack": "React | Express | Node | Redis",
-      "images": ["/project2a.png", "/project2b.png"],
+      "images": [
+        "/project2a.png",
+        "/project2b.png"
+      ],
       "github": "https://github.com/anonymous372/StalkIt",
       "live": "https://stalk-em.netlify.app/",
       "highlights": [
         "**Designed a full-stack leaderboard** to aggregate and visualize **LeetCode** and **Codeforces metrics** for **30+ peers**",
         "**Developed interactive React UI components** supporting custom sorting and **data visualization** for recent contest performance using **react-chart-js**",
         "**Architected a Redis-backed data refresh pipeline** to minimize external API calls and maintaining **>99% uptime** serving **1000+ monthly visits** for over **2 years**"
+      ]
+    },
+    {
+      "name": "CTRW: Time-Gated LeetCode Hint Extension",
+      "techStack": "JavaScript | HTML | CSS | Gemini API",
+      "images": [
+        "/project3a.png",
+        "/project3b.png",
+        "/project3c.png"
+      ],
+      "github": "https://github.com/anonymous372/CTRW",
+      "live": "",
+      "highlights": [
+        "**Developed a lightweight Chrome extension** that integrates seamlessly into the **LeetCode UI**, providing **time-gated hints** to foster independent problem-solving",
+        "**Integrated Google's Gemini API** to dynamically analyze problem constraints and generate **three progressive levels of hints** focusing on **data structures, math properties, and optimal approaches**",
+        "**Engineered a time-lock mechanism** that unlocks hints at **10, 20, and 30-minute intervals**, effectively preventing premature editorial lookups and improving the learning process"
+      ]
+    },
+    {
+      "name": "DirectConnect: LinkedIn Connection Utility Extension",
+      "techStack": "JavaScript | DOM API | HTML | CSS",
+      "images": [
+        "/project4a.png",
+        "/project4b.png"
+      ],
+      "github": "https://github.com/anonymous372/DirectConnect",
+      "live": "",
+      "highlights": [
+        "**Developed a browser extension** that seamlessly injects a **'Direct Connect' button** into **LinkedIn search results**, drastically streamlining the networking workflow",
+        "**Automated the multi-step connection process** by utilizing background scripts to silently open profiles in **hidden tabs**, execute precise **DOM navigation**, and dispatch requests without interrupting the active search session",
+        "**Eliminated a tedious 6-step manual workflow**, enabling users to efficiently process **bulk connection requests at scale** with a **single click** per prospect"
       ]
     }
   ],
