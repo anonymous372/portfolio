@@ -56,7 +56,7 @@ const Hero = ({ data }) => {
           <div className="flex-1 md:px-8 flex flex-col justify-start border-t md:border-t-0 md:border-l border-borderLine relative z-10 py-6 md:py-0">
              <span className="text-[11px] uppercase tracking-[0.2em] font-mono font-bold text-foreground/70 dark:text-foreground/60 mb-2">Contact</span>
              <a href={`mailto:${data.email}`} className="text-base hover:text-indigo-500 transition-colors truncate mb-1">{data.email}</a>
-             <span className="text-sm text-foreground/60">{data.phone}</span>
+            {data.phone && <span className="text-sm text-foreground/60">{data.phone}</span> }
           </div>
 
           {/* Profiles */}
