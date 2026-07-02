@@ -69,6 +69,24 @@
   ],
   "projects": [
     {
+      "name": "Wudid: Daily Accountability & Task Tracking Platform",
+      "techStack": "React | Express | Node | MongoDB",
+      "images": [
+        "/project5a.png",
+        "/project5b.png",
+        "/project5c.png",
+        "/project5d.png"
+      ],
+      "github": "https://github.com/anonymous372/Wudid",
+      "live": "https://wudid.netlify.app/",
+      "highlights": [
+        "**Developed an interactive calendar-based tracking platform** enabling users to seamlessly log, edit, and manage daily tasks, with support for **custom task labels** to facilitate logical grouping and organization",
+        "**Built an analytics dashboard** featuring **custom date filters** and visual metrics—including daily completion trends, **task label breakdown charts**, and a **yearly activity heatmap** to assess productivity trends",
+        "**Engineered an event management and streak tracking system** that displays upcoming events via modals and incentivizes user consistency through automated **daily streak counters**",
+        "**Implemented a secure passwordless authentication flow** to eliminate login friction and deliver a **fully responsive, clean UI** with customizable **modal themes** for task creation"
+      ]
+    },
+    {
       "name": "Migozz: Real-Time Multimedia Communication Platform",
       "techStack": "MERN | Socket.io | Peer.js",
       "images": [
